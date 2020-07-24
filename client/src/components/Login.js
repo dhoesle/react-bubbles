@@ -26,8 +26,8 @@ class Login extends React.Component {
     e.preventDefault();
     axiosWithAuth()
       .post('/api/login', {
-        username: 'Lambda School',
-        password: 'i<3Lambd4'
+        username: this.state.credentials.username,
+        password: this.state.credentials.password
       })
       .then(res => {
         console.log("Login -> res.data", res.data.payload)
